@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
+  <xacro:arg name="robot_name" default="panda"/>
+  
+  <xacro:include filename="$(find franka_panda_description)/robots/panda_arm.xacro"/>
+  <xacro:include filename="$(find franka_panda_description)/robots/hand.xacro"/>
+  <xacro:include filename="$(find franka_panda_description)/robots/panda.gazebo.xacro"/>
+  <xacro:include filename="$(find franka_panda_description)/robots/panda.transmission.xacro"/>
+
+  <xacro:panda_arm />
+  <xacro:hand ns="panda" rpy="0 0 ${-pi/4}" connected_to="panda_link8"/>
+
+  <xacro:panda_gazebo robot_name="$(arg robot_name)" />
+  <xacro:panda_transmission robot_name="$(arg robot_name)" /> 
+  <!-- <xacro:include filename="$(find sawyer_description)/urdf/sawyer_base.urdf.xacro">
+    <xacro:arg name="gazebo" value="${gazebo}"/>
+    <xacro:arg name="pedestal" value="${pedestal}"/>
+  </xacro:include>
+  <xacro:if value="$(arg gazebo)">
+  <xacro:include filename="$(find sawyer_description)/urdf/sawyer_base.gazebo.xacro">
+    <xacro:arg name="static" value="${static}"/>
+    <xacro:arg name="pedestal" value="${pedestal}"/>
+  </xacro:include>
+  </xacro:if> -->
+</robot>
