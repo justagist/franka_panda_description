@@ -5,9 +5,9 @@
 
         <!-- Load Gazebo lib and set the robot namespace -->
         <gazebo>
-            <plugin name="sawyer_ros_control" filename="libsawyer_gazebo_ros_control.so">
-                <robotNamespace>/robot</robotNamespace>
-                <robotSimType>sawyer_gazebo/SawyerRobotHWSim</robotSimType>
+            <plugin name="panda_ros_control" filename="libpanda_gazebo_ros_control.so">
+                <robotNamespace>/panda_simulator</robotNamespace>
+                <robotSimType>panda_gazebo/PandaRobotHWSim</robotSimType>
                 <controlPeriod>0.001</controlPeriod>
                 <eStopTopic>sim_estop</eStopTopic>
             </plugin>

@@ -3,8 +3,8 @@
   <name>franka_panda_description</name>
   <version>5.2.0</version>
   <description>
-    Description of Sawyer Robot from Rethink Robotics.
-    This package contains the URDF and meshes describing Sawyer.
+    Description of Panda Robot from Rethink Robotics.
+    This package contains the URDF and meshes describing Panda.
   </description>
 
   <maintainer email="rsdk.support@rethinkrobotics.com">
@@ -13,10 +13,10 @@
   <license>Apache 2.0</license>
   <url type="website">http://sdk.rethinkrobotics.com/intera/</url>
   <url type="repository">
-    https://github.com/RethinkRobotics/sawyer_robot
+    https://github.com/RethinkRobotics/panda_robot
   </url>
   <url type="bugtracker">
-    https://github.com/RethinkRobotics/sawyer_robot/issues
+    https://github.com/RethinkRobotics/panda_robot/issues
   </url>
   <author>Rethink Robotics Inc.</author>
   <buildtool_depend>catkin</buildtool_depend>

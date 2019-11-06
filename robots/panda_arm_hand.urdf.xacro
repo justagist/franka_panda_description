@@ -12,14 +12,4 @@
 
   <xacro:panda_gazebo robot_name="$(arg robot_name)" />
   <xacro:panda_transmission robot_name="$(arg robot_name)" /> 
-  <!-- <xacro:include filename="$(find sawyer_description)/urdf/sawyer_base.urdf.xacro">
-    <xacro:arg name="gazebo" value="${gazebo}"/>
-    <xacro:arg name="pedestal" value="${pedestal}"/>
-  </xacro:include>
-  <xacro:if value="$(arg gazebo)">
-  <xacro:include filename="$(find sawyer_description)/urdf/sawyer_base.gazebo.xacro">
-    <xacro:arg name="static" value="${static}"/>
-    <xacro:arg name="pedestal" value="${pedestal}"/>
-  </xacro:include>
-  </xacro:if> -->
 </robot>
