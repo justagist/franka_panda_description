@@ -11,7 +11,13 @@
                 <controlPeriod>0.001</controlPeriod>
                 <eStopTopic>sim_estop</eStopTopic>
             </plugin>
+<!--             <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+                <robotNamespace>/panda_simulator/</robotNamespace>
+                <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+                <legacyModeNS>true</legacyModeNS>
+              </plugin> -->
         </gazebo>
+
 
         <transmission name="${robot_name}_tran_1">
             <type>transmission_interface/SimpleTransmission</type>
