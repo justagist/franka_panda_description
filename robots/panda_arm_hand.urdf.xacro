@@ -1,15 +1,20 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
   <xacro:arg name="robot_name" default="panda"/>
+  <xacro:arg name="load_gripper" default="true"/>
+
   
   <xacro:include filename="$(find franka_panda_description)/robots/panda_arm.xacro"/>
-  <xacro:include filename="$(find franka_panda_description)/robots/hand.xacro"/>
+
+  <xacro:if value="$(arg load_gripper)">
+    <xacro:include filename="$(find franka_panda_description)/robots/hand.xacro"/>
+    <xacro:hand ns="panda" rpy="0 0 ${-pi/4}" connected_to="panda_link8"/>
+  </xacro:if>
   <xacro:include filename="$(find franka_panda_description)/robots/panda.gazebo.xacro"/>
   <xacro:include filename="$(find franka_panda_description)/robots/panda.transmission.xacro"/>
 
   <xacro:panda_arm />
-  <xacro:hand ns="panda" rpy="0 0 ${-pi/4}" connected_to="panda_link8"/>
 
-  <xacro:panda_gazebo robot_name="$(arg robot_name)" />
-  <xacro:panda_transmission robot_name="$(arg robot_name)" /> 
+  <xacro:panda_gazebo robot_name="$(arg robot_name)" load_gripper="$(arg load_gripper)"/>
+  <xacro:panda_transmission robot_name="$(arg robot_name)" load_gripper="$(arg load_gripper)"/> 
 </robot>
