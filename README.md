@@ -1,6 +1,6 @@
 # franka_panda_desctiption 
 
-Package modified from *franka_description* package ([*franka_ros*](https://github.com/frankaemika/franka_ros])) to provide gazebo simulation support.
+Package modified from *franka_description* package ([*franka_ros*](https://github.com/frankaemika/franka_ros])) to provide gazebo simulation support. This package is needed for [*panda_simulator*](https://github.com/justagist/panda_simulator).
 
 ## Related Packages
 - [*panda_simulator*](https://github.com/justagist/panda_simulator) : Simulation in Gazebo with exposed controllers and state feedback using ROS topics and services. The simulated robot uses the same ROS topics and services as the real robot when using the [*franka_ros_interface*](https://github.com/justagist/franka_ros_interface).
