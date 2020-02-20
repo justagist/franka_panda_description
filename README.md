@@ -1,6 +1,6 @@
 # franka_panda_desctiption 
 
-Robot description package modified from [*franka_ros*][franka-ros] package to include dynamics parameters for the robot arm (as estimated in [this paper](https://hal.inria.fr/hal-02265293/document)). Also includes transmission and control definitions required for Gazebo support (see [*panda_simulator*](https://github.com/justagist/panda_simulator)) package).
+Robot description package modified from [*franka_ros*][franka-ros] package to include dynamics parameters for the robot arm (as estimated in [this paper](https://hal.inria.fr/hal-02265293/document)). Also includes transmission and control definitions required for Gazebo support (see [*panda_simulator*](https://github.com/justagist/panda_simulator) package).
 
 ## Related Packages
 - [*panda_simulator*](https://github.com/justagist/panda_simulator) : Simulation in Gazebo with exposed controllers and state feedback using ROS topics and services. The simulated robot uses the same ROS topics and services as the real robot when using the [*franka_ros_interface*](https://github.com/justagist/franka_ros_interface).
