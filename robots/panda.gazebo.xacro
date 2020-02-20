@@ -4,7 +4,6 @@
 
     <xacro:macro name="panda_gazebo" params="robot_name load_gripper">
 
-        <!-- Link0 -->
         <gazebo reference="${robot_name}_link0">
             <material>Gazebo/Grey</material>
             <mu1>0.2</mu1>
