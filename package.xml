@@ -12,7 +12,7 @@
   </maintainer>
   <license>TODO</license>
 
-  <author>Franka Emika</author>
+  <author>Saif Sidhik</author>
 
   <buildtool_depend>catkin</buildtool_depend>
 
