@@ -4,7 +4,7 @@
   <xacro:arg name="load_gripper" default="true"/>
   <xacro:arg name="load_gazebo" default="false"/>
   <xacro:arg name="use_gazebo_control" default="false"/>
-  <xacro:arg name="connected_to" default=""/>
+  <xacro:arg name="connected_to" default=""/> <!-- If using a different frame with ${connected_to} param, make sure 'world' frame exists in the TF tree -->
   
   <xacro:include filename="$(find franka_panda_description)/robots/panda_arm.xacro"/>
 

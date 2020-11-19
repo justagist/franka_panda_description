@@ -1,31 +1,22 @@
 <?xml version='1.0'?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
   <xacro:macro name="panda_arm" params="arm_id:='panda' description_pkg:='franka_panda_description' connected_to:=''  in_gazebo='false' xyz:='0 0 0' rpy:='0 0 0'">
-    <xacro:unless value="${not connected_to}">
-      <joint name="${arm_id}_joint_${connected_to}" type="fixed">
-        <parent link="${connected_to}"/>
-        <child link="${arm_id}_link0"/>
-        <origin rpy="${rpy}" xyz="${xyz}"/>
-      </joint>
-    </xacro:unless>
-
-    <xacro:property name="joint_damping" value="1.0"/>
-    <xacro:unless value="${in_gazebo == 'false'}">
-
+    <!-- If using custom frame with ${connected_to} param, make sure 'world' frame exists in its TF tree -->
+    <xacro:if value="${connected_to == ''}">
       <link name="world" />
-
-      <joint name="robot_to_world" type="fixed">
-        <parent link="world" />
-        <xacro:if value="${not connected_to}">
-          <child link="${arm_id}_link0" />
-        </xacro:if>
-        <xacro:unless value="${not connected_to}">
-          <child link="${connected_to}"/>
-        </xacro:unless>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
-        <dynamics damping="${joint_damping}"/>
-      </joint>
+      <xacro:property name="base_frame_name" value="world"/>
+    </xacro:if>
+    <xacro:unless value="${connected_to == ''}">
+      <xacro:property name="base_frame_name" value="${connected_to}"/>
     </xacro:unless>
+    <joint name="${arm_id}_to_${base_frame_name}" type="fixed">
+      <parent link="${base_frame_name}"/>
+      <child link="${arm_id}_link0"/>
+      <origin rpy="${rpy}" xyz="${xyz}"/>
+      <xacro:unless value="${in_gazebo == 'false'}">
+        <dynamics damping="1.0"/>
+      </xacro:unless>
+    </joint>
 
     <link name="${arm_id}_link0">
       <visual>
