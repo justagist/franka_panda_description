@@ -4,7 +4,7 @@
   <xacro:arg name="load_gripper" default="true"/>
   <xacro:arg name="load_gazebo" default="false"/>
   <xacro:arg name="use_gazebo_control" default="false"/>
-
+  <xacro:arg name="connected_to" default=""/>
   
   <xacro:include filename="$(find franka_panda_description)/robots/panda_arm.xacro"/>
 
@@ -17,9 +17,9 @@
     <xacro:include filename="$(find franka_panda_description)/robots/panda.gazebo.xacro"/>
     <xacro:include filename="$(find franka_panda_description)/robots/panda.transmission.xacro"/>
     
-    <xacro:panda_arm in_gazebo="true" />
+    <xacro:panda_arm in_gazebo="true"  connected_to="$(arg connected_to)"/>
     <xacro:panda_gazebo robot_name="$(arg robot_name)" load_gripper="$(arg load_gripper)"/>
-    <xacro:panda_transmission robot_name="$(arg robot_name)" load_gripper="$(arg load_gripper)" use_gazebo_control="$(arg use_gazebo_control)"/> 
+    <xacro:panda_transmission robot_name="$(arg robot_name)" load_gripper="$(arg load_gripper)" use_gazebo_control="$(arg use_gazebo_control)"/>
   </xacro:if>
 
   <xacro:unless value="$(arg load_gazebo)">  

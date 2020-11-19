@@ -16,7 +16,12 @@
 
       <joint name="robot_to_world" type="fixed">
         <parent link="world" />
-        <child link="${arm_id}_link0" />
+        <xacro:if value="${not connected_to}">
+          <child link="${arm_id}_link0" />
+        </xacro:if>
+        <xacro:unless value="${not connected_to}">
+          <child link="${connected_to}"/>
+        </xacro:unless>
         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
         <dynamics damping="${joint_damping}"/>
       </joint>
