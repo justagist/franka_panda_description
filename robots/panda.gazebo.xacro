@@ -127,6 +127,26 @@
             <provideFeedback>true</provideFeedback>
           </gazebo>
       </xacro:if>
+
+    <!-- Adding FT sensor at wrist. This is not present in real robot and is used only for computing end-point effort directly, unlike in the real robot where it is estimated from the joint efforts. -->
+    <gazebo reference="${robot_name}_joint7">
+      <disableFixedJointLumping>true</disableFixedJointLumping>
+      <sensor name="${robot_name}_joint7_force_torque" type="force_torque">
+        <always_on>true</always_on>
+        <visualize>true</visualize>
+        <force_torque>
+          <frame>sensor</frame>
+          <measure_direction>child_to_parent</measure_direction>
+        </force_torque>
+      </sensor>
+    </gazebo>
+    <gazebo>
+      <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+        <updateRate>30.0</updateRate>
+        <topicName>/gazebo/robot/wrist/ft</topicName>
+        <jointName>panda_joint7</jointName>
+      </plugin>
+    </gazebo>
     </xacro:macro>
 
 </robot>

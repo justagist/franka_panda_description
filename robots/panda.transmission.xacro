@@ -101,6 +101,7 @@
                 <mechanicalReduction>1</mechanicalReduction>
             </actuator>
         </transmission>
+
         <xacro:if value="${load_gripper}">
             <transmission name="${robot_name}_leftfinger">
                 <type>transmission_interface/SimpleTransmission</type>
