@@ -4,15 +4,6 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="panda">
-  <material name="panda_white">
-    <color rgba="1 1 1 1"/>
-  </material>
-  <material name="panda_gray">
-    <color rgba="0.4 0.4 0.4 1"/>
-  </material>
-  <material name="silver">
-    <color rgba="0.5 0.5 0.5 1"/>
-  </material>
   <link name="panda_link0">
     <visual>
       <geometry>
@@ -31,7 +22,6 @@
       <geometry>
         <mesh filename="meshes/visual/link1.dae"/>
       </geometry>
-      <material name="panda_white"/>
     </visual>
     <collision>
       <geometry>
@@ -58,7 +48,6 @@
       <geometry>
         <mesh filename="meshes/visual/link2.dae"/>
       </geometry>
-      <material name="panda_white"/>
     </visual>
     <collision>
       <geometry>
@@ -85,7 +74,6 @@
       <geometry>
         <mesh filename="meshes/visual/link3.dae"/>
       </geometry>
-      <material name="panda_white"/>
     </visual>
     <collision>
       <geometry>
@@ -112,7 +100,6 @@
       <geometry>
         <mesh filename="meshes/visual/link4.dae"/>
       </geometry>
-      <material name="panda_white"/>
     </visual>
     <collision>
       <geometry>
@@ -139,7 +126,6 @@
       <geometry>
         <mesh filename="meshes/visual/link5.dae"/>
       </geometry>
-      <material name="panda_white"/>
     </visual>
     <collision>
       <geometry>
@@ -166,7 +152,6 @@
       <geometry>
         <mesh filename="meshes/visual/link6.dae"/>
       </geometry>
-      <material name="panda_white"/>
     </visual>
     <collision>
       <geometry>
