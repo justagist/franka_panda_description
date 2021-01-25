@@ -20,9 +20,9 @@
         </geometry>
       </collision>
       <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="0.68"/>
-        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+        <origin rpy="0 0 0" xyz="0 0.0015244 0.0275912"/>
+        <mass value="0.73"/>
+        <inertia ixx="0.00278560230025" ixy="0.0" ixz="0.0" iyy="0.000400033405336" iyz="0.0" izz="0.00256378041832"/>
       </inertial>
     </link>
     <link name="${ns}_leftfinger">
@@ -37,9 +37,9 @@
         </geometry>
       </collision>
       <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="0.01"/>
-        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+        <origin rpy="0 0 0" xyz="0 0.0145644 0.0227941"/>
+        <mass value="0.1"/>
+        <inertia ixx="3.01220925051e-05" ixy="0.0" ixz="0.0" iyy="2.95873808038e-05" iyz="0.0" izz="6.95125211657e-06"/>
       </inertial>
     </link>
     <link name="${ns}_rightfinger">
@@ -56,9 +56,9 @@
         </geometry>
       </collision>
       <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="0.01"/>
-        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+        <origin rpy="0 0 3.141592653589793" xyz="0 -0.0145644 0.0227941"/>
+        <mass value="0.1"/>
+        <inertia ixx="3.01220925051e-05" ixy="0.0" ixz="0.0" iyy="2.95873808038e-05" iyz="0.0" izz="6.95125211657e-06"/>
       </inertial>
     </link>
     <joint name="${ns}_finger_joint1" type="prismatic">
