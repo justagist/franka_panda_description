@@ -47,7 +47,7 @@
       <disableFixedJointLumping>true</disableFixedJointLumping>
       <sensor name="${robot_name}_joint7_force_torque" type="force_torque">
         <always_on>true</always_on>
-        <visualize>true</visualize>
+        <visualize>false</visualize>
         <force_torque>
           <frame>sensor</frame>
           <measure_direction>child_to_parent</measure_direction>
