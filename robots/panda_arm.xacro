@@ -225,8 +225,8 @@
         <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
       </inertial>
     </link>
-    <joint name="${arm_id}_joint8" type="fixed">
-      <origin rpy="0 0 0" xyz="0 0 0.107"/>
+    <joint name="${arm_id}_joint8" type="fixed">      
+    <origin rpy="0 0 0" xyz="0 0 0.107"/>
       <parent link="${arm_id}_link7"/>
       <child link="${arm_id}_link8"/>
       <axis xyz="0 0 0"/>
