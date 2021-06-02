@@ -61,6 +61,165 @@
         <jointName>panda_joint7</jointName>
       </plugin>
     </gazebo>
+
+    <!-- Configure self collision properties per link -->
+    <!-- The gripper fingers do not have this flag otherwise the gripper would not be allowed to close correctly -->
+    <gazebo reference="${robot_name}_link1">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="${robot_name}_link2">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="${robot_name}_link3">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="${robot_name}_link4">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="${robot_name}_link5">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="${robot_name}_link6">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="${robot_name}_link7">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+  
+    <!-- Collision sensors on all links. This is not present on the real robot, it is used only in simulation to detect collisions. -->
+    <!-- Link 0 is omitted because it is always in contact with the ground  -->
+    <gazebo reference="${robot_name}_link1">
+      <sensor name='${robot_name}_link1_contact' type='contact'>
+        <update_rate> 50 </update_rate>
+        <always_on>true</always_on>
+          <contact>
+              <collision>${robot_name}_link1_collision</collision>
+          </contact>
+          <plugin name="link1_bumper" filename="libgazebo_ros_bumper.so">
+            <bumperTopicName>${robot_name}_link1_collision</bumperTopicName>
+            <frameName>${robot_name}_link1</frameName>
+          </plugin>
+      </sensor>
+    </gazebo>
+
+    <gazebo reference="${robot_name}_link2">
+      <sensor name='${robot_name}_link2_contact' type='contact'>
+        <update_rate> 50 </update_rate>
+        <always_on>true</always_on>
+          <contact>
+              <collision>${robot_name}_link2_collision</collision>
+          </contact>
+          <plugin name="link2_bumper" filename="libgazebo_ros_bumper.so">
+            <bumperTopicName>${robot_name}_link2_collision</bumperTopicName>
+            <frameName>${robot_name}_link2</frameName>
+          </plugin>
+      </sensor>
+    </gazebo>
+
+    <gazebo reference="${robot_name}_link3">
+      <sensor name='${robot_name}_link3_contact' type='contact'>
+        <update_rate> 50 </update_rate>
+        <always_on>true</always_on>
+          <contact>
+              <collision>${robot_name}_link3_collision</collision>
+          </contact>
+          <plugin name="link3_bumper" filename="libgazebo_ros_bumper.so">
+            <bumperTopicName>${robot_name}_link3_collision</bumperTopicName>
+            <frameName>${robot_name}_link3</frameName>
+          </plugin>
+      </sensor>
+    </gazebo>
+
+    <gazebo reference="${robot_name}_link4">
+      <sensor name='${robot_name}_link4_contact' type='contact'>
+        <update_rate> 50 </update_rate>
+        <always_on>true</always_on>
+          <contact>
+              <collision>${robot_name}_link4_collision</collision>
+          </contact>
+          <plugin name="link4_bumper" filename="libgazebo_ros_bumper.so">
+            <bumperTopicName>${robot_name}_link4_collision</bumperTopicName>
+            <frameName>${robot_name}_link4</frameName>
+          </plugin>
+      </sensor>
+    </gazebo>
+
+    <gazebo reference="${robot_name}_link5">
+      <sensor name='${robot_name}_link5_contact' type='contact'>
+        <update_rate> 50 </update_rate>
+        <always_on>true</always_on>
+          <contact>
+              <collision>${robot_name}_link5_collision</collision>
+          </contact>
+          <plugin name="link5_bumper" filename="libgazebo_ros_bumper.so">
+            <bumperTopicName>${robot_name}_link5_collision</bumperTopicName>
+            <frameName>${robot_name}_link5</frameName>
+          </plugin>
+      </sensor>
+    </gazebo>
+
+    <gazebo reference="${robot_name}_link6">
+      <sensor name='${robot_name}_link6_contact' type='contact'>
+        <update_rate> 50 </update_rate>
+        <always_on>true</always_on>
+          <contact>
+              <collision>${robot_name}_link6_collision</collision>
+          </contact>
+          <plugin name="link6_bumper" filename="libgazebo_ros_bumper.so">
+            <bumperTopicName>${robot_name}_link6_collision</bumperTopicName>
+            <frameName>${robot_name}_link6</frameName>
+          </plugin>
+      </sensor>
+    </gazebo> 
+
+    <gazebo reference="${robot_name}_link7">
+      <sensor name='${robot_name}_link7_contact' type='contact'>
+        <update_rate> 50 </update_rate>
+        <always_on>true</always_on>
+          <contact>
+              <collision>${robot_name}_link7_collision</collision>
+          </contact>
+          <plugin name="link7_bumper" filename="libgazebo_ros_bumper.so">
+            <bumperTopicName>${robot_name}_link7_collision</bumperTopicName>
+            <frameName>${robot_name}_link7</frameName>
+          </plugin>
+      </sensor>
+    </gazebo>
+
+    <gazebo reference="${robot_name}_leftfinger">
+      <sensor name='${robot_name}_leftfinger_contact' type='contact'>
+        <update_rate> 50 </update_rate>
+        <always_on>true</always_on>
+          <contact>
+              <collision>${robot_name}_leftfinger_collision</collision>
+          </contact>
+          <plugin name="leftfinger_bumper" filename="libgazebo_ros_bumper.so">
+            <bumperTopicName>${robot_name}_leftfinger_collision</bumperTopicName>
+            <frameName>${robot_name}_leftfinger</frameName>
+          </plugin>
+      </sensor>
+    </gazebo>
+
+    <gazebo reference="${robot_name}_rightfinger">
+      <sensor name='${robot_name}_rightfinger_contact' type='contact'>
+        <update_rate> 50 </update_rate>
+        <always_on>true</always_on>
+          <contact>
+              <collision>${robot_name}_rightfinger_collision</collision>
+          </contact>
+          <plugin name="rightfinger_bumper" filename="libgazebo_ros_bumper.so">
+            <bumperTopicName>${robot_name}_rightfinger_collision</bumperTopicName>
+            <frameName>${robot_name}_rightfinger</frameName>
+          </plugin>
+      </sensor>
+    </gazebo>
+
     </xacro:macro>
 
 </robot>
