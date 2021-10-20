@@ -148,7 +148,17 @@
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/collision/link5.stl"/>
+          <mesh filename="package://${description_pkg}/meshes/collision/link5_1.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/collision/link5_2.stl"/>
+        </geometry>
+      </collision>
+      <collision>
+        <geometry>
+          <mesh filename="package://${description_pkg}/meshes/collision/link5_3.stl"/>
         </geometry>
       </collision>
       <inertial>
@@ -225,7 +235,7 @@
         <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
       </inertial>
     </link>
-    <joint name="${arm_id}_joint8" type="fixed">      
+    <joint name="${arm_id}_joint8" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0.107"/>
       <parent link="${arm_id}_link7"/>
       <child link="${arm_id}_link8"/>

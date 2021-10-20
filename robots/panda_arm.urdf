@@ -129,7 +129,17 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="meshes/collision/link5.stl"/>
+        <mesh filename="package://${description_pkg}/meshes/collision/link5_1.stl"/>
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="package://${description_pkg}/meshes/collision/link5_2.stl"/>
+      </geometry>
+    </collision>
+    <collision>
+      <geometry>
+        <mesh filename="package://${description_pkg}/meshes/collision/link5_3.stl"/>
       </geometry>
     </collision>
     <inertial>
